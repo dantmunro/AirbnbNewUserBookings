@@ -3,6 +3,9 @@ Currently submitting the output from the namesake .ipynb file into "submissions.
 
 Have so far tried Adaboosted Decision Trees, Logistic Regression and Random Forests (Random Forests seem to have the best performance so far)
 
+Currently listed as "Daniel Munro" on the leaderboard:  https://www.kaggle.com/c/airbnb-recruiting-new-user-bookings/leaderboard
+(As long as contest is running, current code may not reflect submission currently on leaderboard)
+
 Other file labels:
 Scratchpad.ipynb - a "scratch" IPython Notebook for testing different libraries and functions
 age_gender_bkts.csv - contains the population of people sampled by age range, country, gender and year using the service
