@@ -8,6 +8,7 @@ Currently listed as "Daniel Munro" on the leaderboard:  https://www.kaggle.com/c
 
 Other file labels:
 Scratchpad.ipynb - a "scratch" IPython Notebook for testing different libraries and functions
+Scratchpad.py - a similar file.  Currently being used to experiment with different means of filling missing data
 age_gender_bkts.csv - contains the population of people sampled by age range, country, gender and year using the service
 countries.csv - contains information about each country that a label can take on (info is mostly relative to United States)
 sample_submission_NDF.csv - a sample submission file
