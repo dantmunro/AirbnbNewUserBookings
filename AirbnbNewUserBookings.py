@@ -23,14 +23,13 @@ sessions = pd.read_csv('age_gender_bkts.csv')
 
 print(filled[0])
 print('Cleaning Data: Converting all entries to numerical type, filling NaNs, etc...')
-le = preprocessing.LabelEncoder()
+le = preprocessing.LabelEncoder() #To convert strings to numerical types
 for i, df in enumerate(filled):
-    for row in df.iterrows():
-        if pd.isnull(row['age']):
-            row['age'] =
-
-    '''
     for feature in [col for col in df.columns if col not in ['id', 'country_destination']]: #Excluding id
+        #Filling in the mean values for each column - as of 2/7/16, this with the Random Forest has produced
+        #the most success
+        #mean = np.mean(df[feature][df[feature].notnull()])
+        #df[feature] = df[feature].fillna(mean)
         if df[feature].dtype not in [int, float]:
             if 'date' in feature:
                 #df[feature] = pd.to_datetime(df[feature])
@@ -45,14 +44,10 @@ for i, df in enumerate(filled):
                 #print(df[feature])
                 df[feature] = le.fit_transform(df[feature])
     df = df.fillna(-1)
-    '''
 
 print(filled[0])
 
 
-        #mean = np.mean(df[feature][df[feature].notnull()])
-        #df[feature] = df[feature].fillna(mean)
-'''
 print('Dropping columns of data entirely missing on at least one set...')
 for col in filled[TEST].columns:
     if any(df[col].isnull().all() for df in filled):
@@ -75,4 +70,3 @@ to_output = pd.concat([filled[TEST]['id'], y_test], axis=1)
 
 print('Writing prediction to submission file...')
 to_output.to_csv('submission.csv', index=False, header=['id', 'country'])
-'''
